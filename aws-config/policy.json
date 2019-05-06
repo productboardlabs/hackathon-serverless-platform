@@ -1,0 +1,62 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
+        "events:PutEvents",
+        "apigateway:*",
+        "s3:*",
+        "dynamodb:ListTables",
+        "logs:*",
+        "dynamodb:ListBackups",
+        "dynamodb:PurchaseReservedCapacityOfferings",
+        "cloudformation:*",
+        "dynamodb:ListStreams",
+        "events:TestEventPattern",
+        "events:PutPermission",
+        "events:DescribeEventBus",
+        "dynamodb:DescribeReservedCapacityOfferings",
+        "dynamodb:ListGlobalTables",
+        "cloudwatch:*",
+        "dynamodb:DescribeReservedCapacity",
+        "lambda:*",
+        "events:RemovePermission",
+        "dynamodb:DescribeLimits"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "VisualEditor1",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetRole",
+        "iam:PassRole",
+        "iam:DeleteRolePolicy",
+        "iam:CreateRole",
+        "iam:DeleteRole",
+        "iam:PutRolePolicy",
+        "events:*"
+      ],
+      "Resource": ["arn:aws:iam::*:role/*", "arn:aws:events:*:*:rule/*"]
+    },
+    {
+      "Sid": "VisualEditor2",
+      "Effect": "Allow",
+      "Action": "dynamodb:*",
+      "Resource": "arn:aws:dynamodb:*:*:table/*"
+    },
+    {
+      "Sid": "VisualEditor3",
+      "Effect": "Allow",
+      "Action": "dynamodb:*",
+      "Resource": [
+        "arn:aws:dynamodb:*:*:table/*/index/*",
+        "arn:aws:dynamodb:*:*:table/*/stream/*",
+        "arn:aws:dynamodb:*:*:table/*/backup/*",
+        "arn:aws:dynamodb::*:global-table/*"
+      ]
+    }
+  ]
+}
