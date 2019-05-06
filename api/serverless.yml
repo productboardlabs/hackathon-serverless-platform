@@ -1,0 +1,36 @@
+service:
+  name: hacking-slack-setup
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: "eu-central-1"
+  stage: prod
+  memorySize: 256
+  timeout: 30
+
+custom:
+  serverless-offline:
+    port: 4000
+
+functions:
+  setup:
+    handler: handler.setup
+    events:
+      - http:
+          method: get
+          path: /
+          cors: true
+    environment:
+      ACCESS_KEY_ID: ${env:ACCESS_KEY_ID}
+      SECRET_ACCESS_KEY: ${env:SECRET_ACCESS_KEY}
+      DB_ENGINE: ${env:DB_ENGINE}
+      DB_HOST: ${env:DB_HOST}
+      DB_USER: ${env:DB_USER}
+      DB_PASS: ${env:DB_PASS}
+      SLACK_TOKEN: ${env:SLACK_TOKEN}
+      AWS_CONSOLE_URL: ${env:AWS_CONSOLE_URL}
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
