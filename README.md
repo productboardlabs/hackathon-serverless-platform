@@ -2,6 +2,10 @@
 
 > ⚠️ This repo provides only high-level overview that can help you to set up similiar platform.
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/476304/57528481-bb554f00-7332-11e9-886c-6fc9fd0cb57b.gif">
+</p>
+
 🚀 [productboard](https://www.productboard.com/) was hosting Hacking Slack Event.
 We wanted to help our attendes to get up to speed and with this reason in
 mind prepared this platform. It can:
