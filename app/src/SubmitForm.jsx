@@ -7,7 +7,7 @@ class SubmitForm extends React.Component {
     super(props);
     this.state = {
       email: "",
-      jsonDataNull: ""
+      jsonData: ""
       // jsonData: `{"test": "json"}`
     };
 
